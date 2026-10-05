@@ -1,23 +1,17 @@
-/*
-DDL Script: Create Bronze Tables (MySQL)
-===============================================================================
-Script Purpose:
-    This script creates raw ingestion tables inside the 'dw_bronze' database, 
-    dropping existing tables if they already exist.
-*/
+-- CREATING STAGING TABLES IN BRONZE LAYER FOR 6 TABLES FROM CRM ANED ERP
 
-USE dw_bronze;
+USE datawarehouse_bronze;
 
 -- 1. CRM Customer Info Table
 DROP TABLE IF EXISTS crm_cust_info;
 CREATE TABLE crm_cust_info (
-    cst_id             INT,
+    cst_id             varchar(50),
     cst_key            VARCHAR(50),
     cst_firstname      VARCHAR(50),
     cst_lastname       VARCHAR(50),
     cst_marital_status VARCHAR(50),
     cst_gndr           VARCHAR(50),
-    cst_create_date    DATE
+    cst_create_date    varchar(50)
 );
 
 -- 2. CRM Product Info Table
