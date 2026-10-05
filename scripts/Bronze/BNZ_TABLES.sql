@@ -63,3 +63,22 @@ CREATE TABLE erp_px_cat_g1v2 (
     subcat      VARCHAR(50),
     maintenance VARCHAR(50)
 );
+
+-- implemeting load log details recordeing
+CREATE TABLE etl_load_log (
+    load_id INT AUTO_INCREMENT PRIMARY KEY,
+
+    table_name VARCHAR(100) NOT NULL,
+
+    load_type VARCHAR(20) NOT NULL,
+
+    start_time DATETIME NOT NULL,
+
+    end_time DATETIME,
+
+    rows_loaded INT DEFAULT 0,
+
+    status VARCHAR(20) NOT NULL,
+
+    error_message TEXT
+);
